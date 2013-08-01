@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_about"
+          android:title="@string/action_about"
+          android:orderInCategory="300"
+          android:showAsAction="never" />
+    <item android:id="@+id/action_toggle_colors"
+          android:title="@string/action_toggle_colors"
+          android:orderInCategory="200"
+          android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_clear"
+          android:title="@string/action_clear"
+          android:orderInCategory="100"
+          android:showAsAction="always" />
+
+</menu>
