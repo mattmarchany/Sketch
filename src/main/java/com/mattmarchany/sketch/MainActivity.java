@@ -3,14 +3,29 @@ package com.mattmarchany.sketch;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.media.MediaScannerConnection;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MainActivity extends Activity {
+    private static final String TAG = "MainActivity";
+
     DrawView drawView;
     Intent aboutIntent;
     Toast clearToast, blackToast, blueToast, greenToast, redToast;
@@ -54,6 +69,10 @@ public class MainActivity extends Activity {
                 // Toggle the colors menu
                 colorDialog();
                 return true;
+            case R.id.action_save:
+                // Save the canvas to gallery
+                saveToGallery();
+                return true;
             case R.id.action_about:
                 // Launch the About section
                 startActivity(aboutIntent);
@@ -63,6 +82,51 @@ public class MainActivity extends Activity {
         }
     }
 
+    // Save to Gallery
+    public void saveToGallery() {
+        View sketch = drawView;
+        sketch.setDrawingCacheEnabled(true);
+        sketch.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+
+        // Create timestamp for saved sketch
+        DateFormat df = new SimpleDateFormat("MM-dd-yyyy-HH-mm-ss");
+        Date today = Calendar.getInstance().getTime();
+        String reportDate = df.format(today);
+
+        Bitmap b = sketch.getDrawingCache();
+        String saveFolder = Environment.getExternalStorageDirectory() + "/Pictures/Sketch";
+        String savePath = saveFolder + "/sketch-" + reportDate + ".jpg";
+        String[] paths = { savePath };
+        String[] mediaType = {"image/jpeg"};
+        File saveDir = new File(saveFolder);
+
+        Log.d(TAG, "savePath: " + saveFolder);
+
+        if (!saveDir.exists()) {
+            saveDir.mkdirs();
+            Log.d(TAG, "Directory created in gallery.");
+        }
+
+        File savedFile = new File(savePath);
+        FileOutputStream outputStream;
+
+        try {
+            outputStream = new FileOutputStream(savedFile);
+            b.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+            outputStream.flush();
+            outputStream.close();
+            Toast.makeText(getApplicationContext(), "Image saved to gallery.", 5000).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "Error saving image.", 5000).show();
+        }
+
+        // Refresh gallery
+        MediaScannerConnection.scanFile(this, paths, mediaType, null);
+
+        // Cleanup
+        sketch.setDrawingCacheEnabled(false);
+    }
 
     // Dialogs
     public void clearDialog() {

@@ -8,9 +8,10 @@
     <string name="action_toggle_colors">Color Picker</string>
     <string name="action_clear">Clear</string>
     <string name="action_fullscreen">Full Screen</string>
+    <string name="action_save">Save Sketch</string>
 
     <string name="about_markers">For something more full featured, check out Markers.</string>
-    <string name="about_sketch_version">Sketch 1.0</string>
+    <string name="about_sketch_version">Sketch 1.1</string>
     <string name="about_credits">by Matt Marchany</string>
 
     <string name="color_black">Black</string>
