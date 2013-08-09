@@ -9,33 +9,44 @@
     <string name="action_clear">Clear</string>
     <string name="action_fullscreen">Full Screen</string>
     <string name="action_save">Save Sketch</string>
+    <string name="action_undo">Undo</string>
+    <string name="action_redo">Redo</string>
 
     <string name="about_markers">For something more full featured, check out Markers.</string>
-    <string name="about_sketch_version">Sketch 1.1</string>
+    <string name="about_sketch_version">Sketch 1.2</string>
     <string name="about_credits">by Matt Marchany</string>
 
     <string name="color_black">Black</string>
     <string name="color_blue">Blue</string>
+    <string name="color_cyan">Cyan</string>
+    <string name="color_dark_gray">Dark Gray</string>
+    <string name="color_gray">Gray</string>
     <string name="color_green">Green</string>
+    <string name="color_light_gray">Light Gray</string>
+    <string name="color_magenta">Magenta</string>
     <string name="color_red">Red</string>
+    <string name="color_yellow">Yellow</string>
 
     <string-array name="color_array">
         <item>@string/color_black</item>
         <item>@string/color_blue</item>
+        <item>@string/color_cyan</item>
+        <item>@string/color_dark_gray</item>
+        <item>@string/color_gray</item>
         <item>@string/color_green</item>
+        <item>@string/color_light_gray</item>
+        <item>@string/color_magenta</item>
         <item>@string/color_red</item>
+        <item>@string/color_yellow</item>
     </string-array>
 
     <string name="dialog_clear_title">Clear</string>
     <string name="dialog_clear_message">Erase your sketch?</string>
-    <string name="dialog_color_title">Pick a color</string>
+    <string name="dialog_color_title">Choose a color</string>
     <string name="dialog_yes">Yes</string>
     <string name="dialog_no">No</string>
 
     <string name="toast_clear">Sketch cleared.</string>
-    <string name="toast_black">Color changed to black.</string>
-    <string name="toast_blue">Color changed to blue.</string>
-    <string name="toast_green">Color changed to green.</string>
-    <string name="toast_red">Color changed to red.</string>
+    <string name="toast_color">Color changed.</string>
 
 </resources>

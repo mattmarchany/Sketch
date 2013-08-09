@@ -5,15 +5,28 @@
           android:showAsAction="never" />
     <item android:id="@+id/action_toggle_colors"
           android:title="@string/action_toggle_colors"
+          android:icon="@drawable/ic_menu_content_edit"
           android:orderInCategory="200"
           android:showAsAction="ifRoom" />
     <item android:id="@+id/action_clear"
           android:title="@string/action_clear"
+          android:icon="@drawable/ic_menu_content_remove"
           android:orderInCategory="100"
           android:showAsAction="always" />
     <item android:id="@+id/action_save"
           android:title="@string/action_save"
+          android:icon="@drawable/ic_menu_content_save"
           android:orderInCategory="250"
+          android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_undo"
+          android:title="@string/action_undo"
+          android:icon="@drawable/ic_menu_undo"
+          android:orderInCategory="225"
+          android:showAsAction="ifRoom" />
+    <item android:id="@+id/action_redo"
+          android:title="@string/action_redo"
+          android:icon="@drawable/ic_menu_redo"
+          android:orderInCategory="230"
           android:showAsAction="ifRoom" />
 
 </menu>

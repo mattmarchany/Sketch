@@ -9,7 +9,6 @@ import android.media.MediaScannerConnection;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,7 +27,7 @@ public class MainActivity extends Activity {
 
     DrawView drawView;
     Intent aboutIntent;
-    Toast clearToast, blackToast, blueToast, greenToast, redToast;
+    Toast clearToast, colorToast;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,10 +38,7 @@ public class MainActivity extends Activity {
 
         // Toasts
         clearToast = Toast.makeText(this, getString(R.string.toast_clear), Toast.LENGTH_SHORT);
-        blackToast = Toast.makeText(this, getString(R.string.toast_black), Toast.LENGTH_SHORT);
-        blueToast = Toast.makeText(this, getString(R.string.toast_blue), Toast.LENGTH_SHORT);
-        greenToast = Toast.makeText(this, getString(R.string.toast_green), Toast.LENGTH_SHORT);
-        redToast = Toast.makeText(this, getString(R.string.toast_red), Toast.LENGTH_SHORT);
+        colorToast = Toast.makeText(this, getString(R.string.toast_color), Toast.LENGTH_SHORT);
 
         // Launch DrawView
         drawView = new DrawView(this);
@@ -72,6 +68,14 @@ public class MainActivity extends Activity {
             case R.id.action_save:
                 // Save the canvas to gallery
                 saveToGallery();
+                return true;
+            case R.id.action_undo:
+                // Undo
+                drawView.undo();
+                return true;
+            case R.id.action_redo:
+                // Redo
+                drawView.redo();
                 return true;
             case R.id.action_about:
                 // Launch the About section
@@ -159,19 +163,34 @@ public class MainActivity extends Activity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (i == 1) {
                             drawView.setColor(Color.BLUE);
-                            blueToast.show();
-                        }
-                        else if (i == 2) {
+                            colorToast.show();
+                        } else if (i == 2) {
+                            drawView.setColor(Color.CYAN);
+                            colorToast.show();
+                        } else if (i == 3) {
+                            drawView.setColor(Color.DKGRAY);
+                            colorToast.show();
+                        } else if (i == 4) {
+                            drawView.setColor(Color.GRAY);
+                            colorToast.show();
+                        } else if (i == 5) {
                             drawView.setColor(Color.GREEN);
-                            greenToast.show();
-                        }
-                        else if (i == 3) {
+                            colorToast.show();
+                        } else if (i == 6) {
+                            drawView.setColor(Color.LTGRAY);
+                            colorToast.show();
+                        } else if (i == 7) {
+                            drawView.setColor(Color.MAGENTA);
+                            colorToast.show();
+                        } else if (i == 8) {
                             drawView.setColor(Color.RED);
-                            redToast.show();
-                        }
-                        else {
+                            colorToast.show();
+                        } else if (i == 9) {
+                            drawView.setColor(Color.YELLOW);
+                            colorToast.show();
+                        } else {
                             drawView.setColor(Color.BLACK);
-                            blackToast.show();
+                            colorToast.show();
                         }
                     }
                 })
