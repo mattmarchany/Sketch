@@ -7,13 +7,12 @@
     <string name="action_about">About</string>
     <string name="action_toggle_colors">Color Picker</string>
     <string name="action_clear">Clear</string>
-    <string name="action_fullscreen">Full Screen</string>
     <string name="action_save">Save Sketch</string>
     <string name="action_undo">Undo</string>
     <string name="action_redo">Redo</string>
 
     <string name="about_markers">For something more full featured, check out Markers.</string>
-    <string name="about_sketch_version">Sketch 1.2</string>
+    <string name="about_sketch_version">Sketch 1.2.1</string>
     <string name="about_credits">by Matt Marchany</string>
 
     <string name="color_black">Black</string>
@@ -48,5 +47,7 @@
 
     <string name="toast_clear">Sketch cleared.</string>
     <string name="toast_color">Color changed.</string>
+    <string name="toast_save_success">Image saved to gallery.</string>
+    <string name="toast_save_error">Error saving image.</string>
 
 </resources>

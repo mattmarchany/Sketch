@@ -5,7 +5,7 @@
           android:showAsAction="never" />
     <item android:id="@+id/action_toggle_colors"
           android:title="@string/action_toggle_colors"
-          android:icon="@drawable/ic_menu_content_edit"
+          android:icon="@drawable/ic_menu_color_palette"
           android:orderInCategory="200"
           android:showAsAction="ifRoom" />
     <item android:id="@+id/action_clear"

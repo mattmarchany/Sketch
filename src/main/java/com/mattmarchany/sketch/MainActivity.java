@@ -1,5 +1,6 @@
 package com.mattmarchany.sketch;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -7,7 +8,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.media.MediaScannerConnection;
 import android.os.Bundle;
-import android.app.Activity;
 import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
@@ -35,10 +35,6 @@ public class MainActivity extends Activity {
 
         // Intents
         aboutIntent = new Intent(this, AboutActivity.class);
-
-        // Toasts
-        clearToast = Toast.makeText(this, getString(R.string.toast_clear), Toast.LENGTH_SHORT);
-        colorToast = Toast.makeText(this, getString(R.string.toast_color), Toast.LENGTH_SHORT);
 
         // Launch DrawView
         drawView = new DrawView(this);
@@ -99,9 +95,9 @@ public class MainActivity extends Activity {
 
         Bitmap b = sketch.getDrawingCache();
         String saveFolder = Environment.getExternalStorageDirectory() + "/Pictures/Sketch";
-        String savePath = saveFolder + "/sketch-" + reportDate + ".jpg";
+        String savePath = saveFolder + "/sketch-" + reportDate + ".png";
         String[] paths = { savePath };
-        String[] mediaType = {"image/jpeg"};
+        String[] mediaType = {"image/png"};
         File saveDir = new File(saveFolder);
 
         Log.d(TAG, "savePath: " + saveFolder);
@@ -116,13 +112,13 @@ public class MainActivity extends Activity {
 
         try {
             outputStream = new FileOutputStream(savedFile);
-            b.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+            b.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
             outputStream.flush();
             outputStream.close();
-            Toast.makeText(getApplicationContext(), "Image saved to gallery.", 5000).show();
+            Toast.makeText(this, R.string.toast_save_success, 5000).show();
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "Error saving image.", 5000).show();
+            Toast.makeText(this, R.string.toast_save_error, 5000).show();
         }
 
         // Refresh gallery
@@ -134,6 +130,8 @@ public class MainActivity extends Activity {
 
     // Dialogs
     public void clearDialog() {
+        clearToast = Toast.makeText(this, getString(R.string.toast_clear), Toast.LENGTH_SHORT);
+
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.dialog_clear_title))
                 .setMessage(getString(R.string.dialog_clear_message))
@@ -156,6 +154,8 @@ public class MainActivity extends Activity {
     }
 
     public void colorDialog() {
+        colorToast = Toast.makeText(this, getString(R.string.toast_color), Toast.LENGTH_SHORT);
+
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.dialog_color_title))
                 .setItems(R.array.color_array, new DialogInterface.OnClickListener() {
