@@ -2,6 +2,7 @@ package com.mattmarchany.sketch;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,6 +14,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -156,44 +160,202 @@ public class MainActivity extends Activity {
     public void colorDialog() {
         colorToast = Toast.makeText(this, getString(R.string.toast_color), Toast.LENGTH_SHORT);
 
-        new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.dialog_color_title))
-                .setItems(R.array.color_array, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        if (i == 1) {
-                            drawView.setColor(Color.BLUE);
-                            colorToast.show();
-                        } else if (i == 2) {
-                            drawView.setColor(Color.CYAN);
-                            colorToast.show();
-                        } else if (i == 3) {
-                            drawView.setColor(Color.DKGRAY);
-                            colorToast.show();
-                        } else if (i == 4) {
-                            drawView.setColor(Color.GRAY);
-                            colorToast.show();
-                        } else if (i == 5) {
-                            drawView.setColor(Color.GREEN);
-                            colorToast.show();
-                        } else if (i == 6) {
-                            drawView.setColor(Color.LTGRAY);
-                            colorToast.show();
-                        } else if (i == 7) {
-                            drawView.setColor(Color.MAGENTA);
-                            colorToast.show();
-                        } else if (i == 8) {
-                            drawView.setColor(Color.RED);
-                            colorToast.show();
-                        } else if (i == 9) {
-                            drawView.setColor(Color.YELLOW);
-                            colorToast.show();
-                        } else {
-                            drawView.setColor(Color.BLACK);
-                            colorToast.show();
-                        }
-                    }
-                })
-                .show();
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_colors);
+        dialog.setTitle(R.string.dialog_color_title);
+
+        final ImageButton blackButton = (ImageButton) dialog.findViewById(R.id.dialog_color_black);
+        if (drawView.getColor() != Color.BLACK) {
+            blackButton.setImageResource(R.drawable.ic_plain_circles_black);
+        }
+        else {
+            blackButton.setImageResource(R.drawable.ic_checked_circles_black);
+        }
+        blackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(Color.BLACK);
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton blueButton = (ImageButton) dialog.findViewById(R.id.dialog_color_blue);
+        if (drawView.getColor() != getResources().getColor(R.color.blue)) {
+            blueButton.setImageResource(R.drawable.ic_plain_circles_blue);
+        }
+        else {
+            blueButton.setImageResource(R.drawable.ic_checked_circles_blue);
+        }
+        blueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.blue));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton darkGrayButton = (ImageButton) dialog.findViewById(R.id.dialog_color_darkgray);
+        if (drawView.getColor() != getResources().getColor(R.color.dark_gray)) {
+            darkGrayButton.setImageResource(R.drawable.ic_plain_circles_darkgray);
+        }
+        else {
+            darkGrayButton.setImageResource(R.drawable.ic_checked_circles_darkgray);
+        }
+        darkGrayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.dark_gray));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton darkGreenButton = (ImageButton) dialog.findViewById(R.id.dialog_color_darkgreen);
+        if (drawView.getColor() != getResources().getColor(R.color.dark_green)) {
+            darkGreenButton.setImageResource(R.drawable.ic_plain_circles_darkgreen);
+        }
+        else {
+            darkGreenButton.setImageResource(R.drawable.ic_checked_circles_darkgreen);
+        }
+        darkGreenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.dark_green));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton grayButton = (ImageButton) dialog.findViewById(R.id.dialog_color_gray);
+        if (drawView.getColor() != getResources().getColor(R.color.gray)) {
+            grayButton.setImageResource(R.drawable.ic_plain_circles_gray);
+        }
+        else {
+            grayButton.setImageResource(R.drawable.ic_checked_circles_gray);
+        }
+        grayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.gray));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton greenButton = (ImageButton) dialog.findViewById(R.id.dialog_color_green);
+        if (drawView.getColor() != getResources().getColor(R.color.green)) {
+            greenButton.setImageResource(R.drawable.ic_plain_circles_green);
+        }
+        else {
+            greenButton.setImageResource(R.drawable.ic_checked_circles_green);
+        }
+        greenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.green));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton lightBlueButton = (ImageButton) dialog.findViewById(R.id.dialog_color_lightblue);
+        if (drawView.getColor() != getResources().getColor(R.color.light_blue)) {
+            lightBlueButton.setImageResource(R.drawable.ic_plain_circles_lightblue);
+        }
+        else {
+            lightBlueButton.setImageResource(R.drawable.ic_checked_circles_lightblue);
+        }
+        lightBlueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.light_blue));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton orangeButton = (ImageButton) dialog.findViewById(R.id.dialog_color_orange);
+        if (drawView.getColor() != getResources().getColor(R.color.orange)) {
+            orangeButton.setImageResource(R.drawable.ic_plain_circles_orange);
+        }
+        else {
+            orangeButton.setImageResource(R.drawable.ic_checked_circles_orange);
+        }
+        orangeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.orange));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton pinkButton = (ImageButton) dialog.findViewById(R.id.dialog_color_pink);
+        if (drawView.getColor() != getResources().getColor(R.color.pink)) {
+            pinkButton.setImageResource(R.drawable.ic_plain_circles_pink);
+        }
+        else {
+            pinkButton.setImageResource(R.drawable.ic_checked_circles_pink);
+        }
+        pinkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.pink));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton purpleButton = (ImageButton) dialog.findViewById(R.id.dialog_color_purple);
+        if (drawView.getColor() != getResources().getColor(R.color.purple)) {
+            purpleButton.setImageResource(R.drawable.ic_plain_circles_purple);
+        }
+        else {
+            purpleButton.setImageResource(R.drawable.ic_checked_circles_purple);
+        }
+        purpleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.purple));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton redButton = (ImageButton) dialog.findViewById(R.id.dialog_color_red);
+        if (drawView.getColor() != getResources().getColor(R.color.red)) {
+            redButton.setImageResource(R.drawable.ic_plain_circles_red);
+        }
+        else {
+            redButton.setImageResource(R.drawable.ic_checked_circles_red);
+        }
+        redButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.red));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        ImageButton yellowButton = (ImageButton) dialog.findViewById(R.id.dialog_color_yellow);
+        if (drawView.getColor() != getResources().getColor(R.color.yellow)) {
+            yellowButton.setImageResource(R.drawable.ic_plain_circles_yellow);
+        }
+        else {
+            yellowButton.setImageResource(R.drawable.ic_checked_circles_yellow);
+        }
+        yellowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawView.setColor(getResources().getColor(R.color.yellow));
+                dialog.dismiss();
+                colorToast.show();
+            }
+        });
+
+        dialog.show();
     }
 }

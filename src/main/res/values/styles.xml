@@ -17,4 +17,16 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <color name="blue">#0000ff</color>
+    <color name="dark_gray">#666666</color>
+    <color name="dark_green">#009900</color>
+    <color name="gray">#999999</color>
+    <color name="green">#00ff00</color>
+    <color name="light_blue">#0099ff</color>
+    <color name="orange">#ff3300</color>
+    <color name="pink">#ff00cc</color>
+    <color name="purple">#6600ff</color>
+    <color name="red">#ff0000</color>
+    <color name="yellow">#ffff00</color>
+
 </resources>

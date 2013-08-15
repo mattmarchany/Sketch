@@ -38,6 +38,10 @@ public class DrawView extends View {
         currentColor = color;
     }
 
+    public int getColor() {
+        return currentPaint.getColor();
+    }
+
     public void clearScreen() {
         paths = new ArrayList<Path>();
         undoPaths = new ArrayList<Path>();

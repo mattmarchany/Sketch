@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerHorizontal="true"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:id="@+id/dialog_color_row1"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/dialog_color_black"
+            android:src="@drawable/ic_plain_circles_black"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_black"/>
+
+        <ImageButton
+            android:id="@+id/dialog_color_blue"
+            android:src="@drawable/ic_plain_circles_blue"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_blue"
+            android:layout_toRightOf="@id/dialog_color_black"/>
+
+        <ImageButton
+            android:id="@+id/dialog_color_darkgray"
+            android:src="@drawable/ic_plain_circles_darkgray"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_dark_gray"
+            android:layout_toRightOf="@id/dialog_color_blue"/>
+
+        <ImageButton
+            android:id="@+id/dialog_color_darkgreen"
+            android:src="@drawable/ic_plain_circles_darkgreen"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_dark_green"
+            android:layout_toRightOf="@id/dialog_color_darkgray"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_color_row2"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_color_row1">
+
+        <ImageButton
+            android:id="@+id/dialog_color_gray"
+            android:src="@drawable/ic_plain_circles_gray"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_gray"/>
+
+        <ImageButton
+            android:id="@+id/dialog_color_green"
+            android:src="@drawable/ic_plain_circles_green"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_green"
+            android:layout_alignLeft="@id/dialog_color_gray"/>
+
+        <ImageButton
+            android:id="@+id/dialog_color_lightblue"
+            android:src="@drawable/ic_plain_circles_lightblue"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_light_blue"
+            android:layout_alignLeft="@id/dialog_color_green"/>
+
+        <ImageButton
+            android:id="@+id/dialog_color_orange"
+            android:src="@drawable/ic_plain_circles_orange"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_orange"
+            android:layout_alignLeft="@id/dialog_color_lightblue"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_color_row3"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_color_row2">
+
+        <ImageButton
+            android:id="@+id/dialog_color_pink"
+            android:src="@drawable/ic_plain_circles_pink"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_pink"/>
+
+        <ImageButton
+            android:id="@+id/dialog_color_purple"
+            android:src="@drawable/ic_plain_circles_purple"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_purple"
+            android:layout_alignLeft="@id/dialog_color_pink"/>
+
+        <ImageButton
+            android:id="@+id/dialog_color_red"
+            android:src="@drawable/ic_plain_circles_red"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_red"
+            android:layout_alignLeft="@id/dialog_color_purple"/>
+
+        <ImageButton
+            android:id="@+id/dialog_color_yellow"
+            android:src="@drawable/ic_plain_circles_yellow"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/color_yellow"
+            android:layout_alignLeft="@id/dialog_color_red"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

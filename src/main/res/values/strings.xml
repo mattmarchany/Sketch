@@ -12,32 +12,25 @@
     <string name="action_redo">Redo</string>
 
     <string name="about_markers">For something more full featured, check out Markers.</string>
-    <string name="about_sketch_version">Sketch 1.2.2</string>
+    <string name="about_sketch_version">Sketch 1.3</string>
     <string name="about_credits">by Matt Marchany</string>
 
     <string name="color_black">Black</string>
     <string name="color_blue">Blue</string>
     <string name="color_cyan">Cyan</string>
     <string name="color_dark_gray">Dark Gray</string>
+    <string name="color_dark_green">Dark Green</string>
     <string name="color_gray">Gray</string>
     <string name="color_green">Green</string>
+    <string name="color_light_blue">Light Blue</string>
     <string name="color_light_gray">Light Gray</string>
     <string name="color_magenta">Magenta</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_purple">Purple</string>
     <string name="color_red">Red</string>
+    <string name="color_white">White</string>
     <string name="color_yellow">Yellow</string>
-
-    <string-array name="color_array">
-        <item>@string/color_black</item>
-        <item>@string/color_blue</item>
-        <item>@string/color_cyan</item>
-        <item>@string/color_dark_gray</item>
-        <item>@string/color_gray</item>
-        <item>@string/color_green</item>
-        <item>@string/color_light_gray</item>
-        <item>@string/color_magenta</item>
-        <item>@string/color_red</item>
-        <item>@string/color_yellow</item>
-    </string-array>
 
     <string name="dialog_clear_title">Clear</string>
     <string name="dialog_clear_message">Erase your sketch?</string>
